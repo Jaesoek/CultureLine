@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <com.culture.inha.cultureline.Lib.CustomEditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="samsung@culture.com"
+        android:hint="example@naver.com"
+        android:inputType="textEmailAddress"
+        android:textSize="14dp" />
+
+    <com.culture.inha.cultureline.Lib.CustomEditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="secret"
+        android:hint="비밀번호 (8자이상 문자,숫자)"
+        android:inputType="textPassword"
+        android:textSize="14dp" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </com.google.android.gms.common.SignInButton>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"/>
+
+    <Button
+        android:id="@+id/btnJoinEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이메일로 회원가입"/>
+
+</LinearLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/viewCancel"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/clear" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:text="프로필"
+                android:textColor="@color/colorBlack"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/myfont" />
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:src="@drawable/blank_profile"
+        android:layout_marginBottom="10dp"/>
+
+    <com.culture.inha.cultureline.Lib.AutoResizeTextView
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:fontFamily="@font/myfont"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack"
+        android:textSize="15dp" />
+
+    <com.culture.inha.cultureline.Lib.AutoResizeTextView
+        android:id="@+id/txtMajor"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:fontFamily="@font/myfont"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack"
+        android:textSize="15dp" />
+
+    <com.culture.inha.cultureline.Lib.AutoResizeTextView
+        android:id="@+id/txtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:fontFamily="@font/myfont"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack"
+        android:textSize="15dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="clip_vertical|start"
+            app:fontFamily="@font/myfont"
+            android:textColor="@color/colorBlack"
+            android:text="푸쉬알람"
+            android:textSize="20dp" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/checkPush"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+    <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="clip_vertical|start"
+            app:fontFamily="@font/myfont"
+            android:textColor="@color/colorBlack"
+            android:text="진동여부"
+            android:textSize="20dp" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/checkVibe"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+    <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="clip_vertical|start"
+            app:fontFamily="@font/myfont"
+            android:textColor="@color/colorBlack"
+            android:text="소리여부"
+            android:textSize="20dp" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/checkSound"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- CheckBox Off -->
+    <item android:drawable="@drawable/heart_off" android:state_checked="false" />
+    <!-- CheckBox On -->
+    <item android:drawable="@drawable/heart_on" android:state_checked="true" /> <!-- default state -->
+    <!-- default -->
+    <item android:drawable="@drawable/heart_off" />
+</selector>

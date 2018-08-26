@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:gravity="center"
+        android:text="프로필 정보입력"
+        android:textColor="@color/colorBlack"
+        android:textSize="32dp"
+        android:textStyle="bold" />
+
+
+    <com.culture.inha.cultureline.Lib.CustomEditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="이름"
+        android:textSize="14dp" />
+
+    <com.culture.inha.cultureline.Lib.CustomEditText
+        android:id="@+id/editStudentId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="학번"
+        android:textSize="14dp" />
+
+    <com.culture.inha.cultureline.Lib.CustomEditText
+        android:id="@+id/editMajor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="학과"
+        android:textSize="14dp" />
+
+    <com.culture.inha.cultureline.Lib.CustomEditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="example@naver.com"
+        android:inputType="textEmailAddress"
+        android:textSize="14dp" />
+
+    <com.culture.inha.cultureline.Lib.CustomEditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="비밀번호 (8자이상 문자,숫자)"
+        android:inputType="textPassword"
+        android:textSize="14dp" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_corner_before"
+        android:text="회원가입완료"
+        android:textColor="@color/colorWhite" />
+
+</LinearLayout>

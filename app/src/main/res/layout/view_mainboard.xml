@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <LinearLayout
+                android:id="@+id/viewProfile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/imgProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/blank_profile"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="2dp" />
+
+                <com.culture.inha.cultureline.Lib.AutoResizeTextView
+                    android:id="@+id/txtProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="14학번 문재석"
+                    android:textColor="@color/colorBlack"
+                    app:autoSizeMaxTextSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/viewTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:paddingStart="12dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:id="@+id/txtCategory"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/imgIsAnswer"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                         android:layout_toStartOf="@+id/txtNumAnswer"/>
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtNumAnswer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="invisible"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+
+                <com.culture.inha.cultureline.Lib.AutoResizeTextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="Title is here"
+                    android:textColor="@color/colorBlack"
+                    app:autoSizeMaxTextSize="15dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="top"
+                    android:text="2017-12-24 07:28"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12dp"
+                    app:fontFamily="@font/myfont" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLines="6"
+            android:padding="12dp"
+            android:text="Contents are in Here!"
+            android:textColor="@color/colorBlack"
+            android:textSize="13dp"
+            app:fontFamily="@font/myfont" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="4dp"
+            android:background="#a0a0a0" />
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
