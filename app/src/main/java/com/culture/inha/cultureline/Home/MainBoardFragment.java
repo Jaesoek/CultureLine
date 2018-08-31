@@ -115,13 +115,9 @@ public class MainBoardFragment extends Fragment implements MainBoardAdapter.OnLo
         swipeView.setOnRefreshListener(this);
 
         mRecyclerView = view.findViewById(R.id.recycleMainBoard);
-        mLayoutManager = new
-
-                LinearLayoutManager(getActivity());
+        mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new
-
-                MainBoardAdapter(new MainBoardAdapter.OnItemClickListener() {
+        mAdapter = new MainBoardAdapter(new MainBoardAdapter.OnItemClickListener() {
             @Override
             public void onQuestionClick(Question question) {
                 Intent intent = new Intent(getContext(), DetailBoardActivity.class);
@@ -249,13 +245,20 @@ public class MainBoardFragment extends Fragment implements MainBoardAdapter.OnLo
     public void onRefresh() {
         // 설정된 카테고리로 데이터를 다시 불러오기 전에 추가적인 요청 방지하기 위한 설정
         for (AppCompatTextView txtCategory : txtCategories) txtCategory.setEnabled(false);
-
-        Call<QuestionSet> callLoad = apiInterface.mainboard(getActivity()
-                .getSharedPreferences("user", 0).getString("token", "hello"));
+        Call<QuestionSet> callLoad;
+        if (GlobalDataSet.setCategoryName(isCategorySet) != null) {
+            callLoad = apiInterface.mainBoardCategory(
+                    getActivity().getSharedPreferences("user", 0).getString("token", "hello"),
+                    GlobalDataSet.setCategoryName(isCategorySet));
+        } else {
+            callLoad = apiInterface.mainboard(
+                    getActivity().getSharedPreferences("user", 0).getString("token", "hello"));
+        }
         callLoad.enqueue(new Callback<QuestionSet>() {
             @Override
             public void onResponse(Call<QuestionSet> call, Response<QuestionSet> response) {
-                Log.d(TAG, "Connecting api is success");
+                Log.d(TAG, "Refresh Connecting api is success");
+
                 mQuestionSet.clear();
                 mQuestionSet.addAll(response.body().getData());
                 mAdapter.addAll(mQuestionSet);
@@ -272,12 +275,12 @@ public class MainBoardFragment extends Fragment implements MainBoardAdapter.OnLo
 
             @Override
             public void onFailure(Call<QuestionSet> call, Throwable t) {
-                Log.d(TAG, "Connecting api is Failed");
+                Log.d(TAG, "Refresh Connecting api is Failed");
             }
         });
     }
 
-    private int getQuestionPostion(int qId) {
+    private int getQuestionPosition(int qId) {
         int result = 0;
         for (Question question : mQuestionSet) {
             if (question.getId() == qId)
@@ -308,12 +311,12 @@ public class MainBoardFragment extends Fragment implements MainBoardAdapter.OnLo
             // question이 intent로 돌아오면 답변의 개수 변경(답변 삭제 및 답변 추가)
             if (data.getSerializableExtra("question") != null) {
                 Question questionFromIntent = (Question) data.getSerializableExtra("question");
-                mQuestionSet.set(getQuestionPostion(questionFromIntent.getId()), questionFromIntent);
-                mAdapter.changeItem(getQuestionPostion(questionFromIntent.getId()), questionFromIntent);
+                mQuestionSet.set(getQuestionPosition(questionFromIntent.getId()), questionFromIntent);
+                mAdapter.changeItem(getQuestionPosition(questionFromIntent.getId()), questionFromIntent);
             }
             // 질문이 삭제될 경우 intent에는 int형 questionId가 있음
             else {
-                int deletedQuestionPostion = getQuestionPostion(data.getIntExtra("questionId", -1));
+                int deletedQuestionPostion = getQuestionPosition(data.getIntExtra("questionId", -1));
                 mQuestionSet.remove(deletedQuestionPostion);
                 mAdapter.removeItem(deletedQuestionPostion);
             }

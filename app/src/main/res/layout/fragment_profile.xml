@@ -17,21 +17,38 @@
             android:layout_marginTop="20dp"
             android:src="@drawable/blank_profile" />
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btnSignOut"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginBottom="30dp"
-            android:background="@color/colorBlack"
-            android:text="로그아웃"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold" />
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnSignOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp"
+                android:background="@color/colorBlack"
+                android:text="로그아웃"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnMyQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_corner"
+                android:text="내 질문보기"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:paddingEnd="20dp"
             android:paddingStart="20dp">
 
@@ -43,23 +60,24 @@
                 android:text="이름"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"
+                android:textStyle="bold"
                 app:fontFamily="@font/myfont" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/name"
                 android:gravity="center_vertical"
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp"
-                app:fontFamily="@font/myfont"
-                android:layout_below="@id/name"/>
+                app:fontFamily="@font/myfont" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:paddingEnd="20dp"
             android:paddingStart="20dp">
 
@@ -71,23 +89,24 @@
                 android:text="전공"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"
+                android:textStyle="bold"
                 app:fontFamily="@font/myfont" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtMajor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/major"
                 android:gravity="center_vertical"
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp"
-                app:fontFamily="@font/myfont"
-                android:layout_below="@+id/major"/>
+                app:fontFamily="@font/myfont" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:paddingEnd="20dp"
             android:paddingStart="20dp">
 
@@ -98,52 +117,20 @@
                 android:text="이메일"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"
+                android:textStyle="bold"
                 app:fontFamily="@font/myfont" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_below="@+id/email"
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp"
-                app:fontFamily="@font/myfont"
-                android:layout_below="@+id/email"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp">
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:text="전화번호"
-                android:textColor="@color/colorBlack"
-                android:textSize="20dp"
                 app:fontFamily="@font/myfont" />
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/txtPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="010-"
-                android:gravity="center_vertical"
-                android:maxLines="1"
-                android:textColor="@color/colorBlack"
-                android:textSize="15dp"
-                app:fontFamily="@font/myfont"
-                android:layout_below="@+id/phone" />
-
         </RelativeLayout>
-
-
 
         <RelativeLayout
             android:layout_width="match_parent"

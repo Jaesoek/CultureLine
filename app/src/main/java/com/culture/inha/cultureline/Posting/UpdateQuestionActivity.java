@@ -72,12 +72,13 @@ public class UpdateQuestionActivity extends BaseActivity {
         btnPost.setVisibility(View.VISIBLE);
         btnPost.setBackgroundResource(R.drawable.button_corner_before);
 
-        txtCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDialog();
-            }
-        });
+        // 만약에 카테고리 수정이 가능할 경우 이거 주석해제
+//        txtCategory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                showDialog();
+//            }
+//        });
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

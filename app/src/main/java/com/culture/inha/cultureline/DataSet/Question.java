@@ -20,6 +20,9 @@ public class Question implements Serializable {
     @SerializedName("contents")
     @Expose
     private String contents;
+    @SerializedName("selected")
+    @Expose
+    private Integer selected;
     @SerializedName("categories")
     @Expose
     private String categories;
@@ -108,4 +111,11 @@ public class Question implements Serializable {
         this.author = author;
     }
 
+    public Integer getSelected() {
+        return selected;
+    }
+
+    public void setSelected(Integer selected) {
+        this.selected = selected;
+    }
 }

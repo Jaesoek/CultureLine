@@ -1,5 +1,7 @@
 package com.culture.inha.cultureline;
 
+import android.util.Log;
+
 import com.culture.inha.cultureline.DataSet.User;
 
 import java.util.ArrayList;
@@ -37,7 +39,10 @@ public class GlobalDataSet {
             if (isSelected[i])
                 result += String.valueOf(i+1) + ",";
         }
-        return result.substring(0, result.length() - 1);
+        if(result.length() != 0)
+            return result.substring(0, result.length() - 1);
+        else
+            return null;
     }
 
 }

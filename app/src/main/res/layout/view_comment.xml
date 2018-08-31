@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imgCommentPointer"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:background="@drawable/comment_pointer" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtCommentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgCommentPointer"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:text="강원철" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/txtCommentContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="This is comment's contents" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtUpdateComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수정"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtDeleteComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txtUpdateComment"
+            android:layout_marginStart="8dp"
+            android:text="삭제"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtCommentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="2017-12-07"/>
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+</LinearLayout>

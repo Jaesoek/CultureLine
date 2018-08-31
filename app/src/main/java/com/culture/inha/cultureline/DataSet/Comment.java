@@ -1,21 +1,17 @@
-
 package com.culture.inha.cultureline.DataSet;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Answer implements Serializable {
-
+public class Comment implements Serializable {
     @SerializedName("id")
     @Expose
     private Integer id;
-    @SerializedName("question_id")
+    @SerializedName("answer_id")
     @Expose
-    private Integer questionId;
+    private Integer answerId;
     @SerializedName("author_id")
     @Expose
     private Integer authorId;
@@ -31,19 +27,9 @@ public class Answer implements Serializable {
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
-    @SerializedName("selected")
-    @Expose
-    private Integer selected;
-    @SerializedName("author")
-    @Expose
-    private Author author;
     @SerializedName("liked")
     @Expose
     private Integer liked;
-    @SerializedName("comments")
-    @Expose
-    private List<Comment> comments;
-
 
     public Integer getId() {
         return id;
@@ -53,12 +39,12 @@ public class Answer implements Serializable {
         this.id = id;
     }
 
-    public Integer getQuestionId() {
-        return questionId;
+    public Integer getAnswerId() {
+        return answerId;
     }
 
-    public void setQuestionId(Integer questionId) {
-        this.questionId = questionId;
+    public void setAnswerId(Integer answerId) {
+        this.answerId = answerId;
     }
 
     public Integer getAuthorId() {
@@ -101,35 +87,11 @@ public class Answer implements Serializable {
         this.updatedAt = updatedAt;
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
     public Integer getLiked() {
         return liked;
     }
 
     public void setLiked(Integer liked) {
         this.liked = liked;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
-
-    public Integer getSelected() {
-        return selected;
-    }
-
-    public void setSelected(Integer selected) {
-        this.selected = selected;
     }
 }

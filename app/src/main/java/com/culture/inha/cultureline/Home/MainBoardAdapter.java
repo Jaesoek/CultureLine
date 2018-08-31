@@ -131,7 +131,7 @@ public class MainBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             ((ItemViewHolder) holder).txtTitle.setText(mDataset.get(position).getTitle());
             ((ItemViewHolder) holder).txtDate.setText(mDataset.get(position).getUpdatedAt());
             ((ItemViewHolder) holder).txtContents.setText(" " + mDataset.get(position).getContents());
-            if (mDataset.get(position).getAnswers().size() > 0) {
+            if (mDataset.get(position).getSelected() != 0) {
                 ((ItemViewHolder) holder).imgIsAnswer.setImageBitmap(DecodeBitMap.decodeSampledBitmapFromResource(
                         ((ItemViewHolder) holder).itemView.getContext().getResources(),
                         R.drawable.answer_on, 85, 70));
@@ -141,8 +141,13 @@ public class MainBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 ((ItemViewHolder) holder).imgIsAnswer.setImageBitmap(DecodeBitMap.decodeSampledBitmapFromResource(
                         holder.itemView.getContext().getResources(),
                         R.drawable.answer_off, 85, 70));
-                ((ItemViewHolder) holder).txtNumAnswer.setText(String.valueOf(0));
-                ((ItemViewHolder) holder).txtNumAnswer.setVisibility(View.INVISIBLE);
+                if (mDataset.get(position).getAnswers().size() > 0) {
+                    ((ItemViewHolder) holder).txtNumAnswer.setText(String.valueOf(mDataset.get(position).getAnswers().size()));
+                    ((ItemViewHolder) holder).txtNumAnswer.setVisibility(View.VISIBLE);
+                } else {
+                    ((ItemViewHolder) holder).txtNumAnswer.setText(String.valueOf(0));
+                    ((ItemViewHolder) holder).txtNumAnswer.setVisibility(View.INVISIBLE);
+                }
             }
 
             ((ItemViewHolder) holder).viewProfile.setOnClickListener(new View.OnClickListener() {

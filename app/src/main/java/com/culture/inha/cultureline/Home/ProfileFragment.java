@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.culture.inha.cultureline.GlobalDataSet;
+import com.culture.inha.cultureline.QuestionPage.MyQuestionActivity;
 import com.culture.inha.cultureline.R;
 import com.culture.inha.cultureline.SignUpIn.LoginActivity;
 
@@ -17,13 +18,8 @@ public class ProfileFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "profile";
 
-    private AppCompatButton btnSignOut;
-    private AppCompatTextView txtName;
-    private AppCompatTextView txtMajor;
-    private AppCompatTextView txtPhone;
-    private AppCompatTextView txtEmail;
-
-    public ProfileFragment(){}
+    public ProfileFragment() {
+    }
 
     public static ProfileFragment newInstance(int sectionNumber) {
         ProfileFragment fragment = new ProfileFragment();
@@ -36,28 +32,39 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        btnSignOut = view.findViewById(R.id.btnSignOut);
+
+        // 로그아웃
+        AppCompatButton btnSignOut = view.findViewById(R.id.btnSignOut);
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getActivity().getSharedPreferences(
-                        "user",0).edit().remove("token").remove("isToken").remove("userId").apply();
+                        "user", 0).edit().remove("token").remove("isToken").remove("userId").apply();
                 startActivity(new Intent(getContext(), LoginActivity.class));
                 getActivity().finish();
             }
         });
 
-        txtName = view.findViewById(R.id.txtName);
-        txtMajor = view.findViewById(R.id.txtMajor);
-        txtPhone = view.findViewById(R.id.txtPhone);
-        txtEmail = view.findViewById(R.id.txtEmail);
+        // 내질문보기
+        AppCompatButton btnMyQuestion = view.findViewById(R.id.btnMyQuestion);
+        btnMyQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MyQuestionActivity.class);
+                getActivity().startActivity(intent);
+                getActivity().finish();
+            }
+        });
 
-        txtName.setText(GlobalDataSet.user.getName());
-        txtMajor.setText(GlobalDataSet.user.getMajor());
+        AppCompatTextView txtName = view.findViewById(R.id.txtName);
+        AppCompatTextView txtMajor = view.findViewById(R.id.txtMajor);
+        AppCompatTextView txtEmail = view.findViewById(R.id.txtEmail);
 
-        if(GlobalDataSet.user.getEmail() == null) txtEmail.setVisibility(View.GONE);
-        else txtEmail.setText(GlobalDataSet.user.getEmail());
-        txtPhone.setVisibility(View.GONE);
+        txtName.setText(" " + GlobalDataSet.user.getName());
+        txtMajor.setText(" " + GlobalDataSet.user.getMajor());
+
+        if (GlobalDataSet.user.getEmail() == null) txtEmail.setVisibility(View.GONE);
+        else txtEmail.setText(" " + GlobalDataSet.user.getEmail());
 
         return view;
     }

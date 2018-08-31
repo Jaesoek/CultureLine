@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewAll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingStart="12dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="bottom"
+                android:text="Title is here"
+                android:textColor="@color/colorBlack"
+                android:textSize="14dp" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgIsAnswer"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/viewOption" />
+
+            <RelativeLayout
+                android:id="@+id/viewOption"
+                android:layout_width="20dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="12dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="7dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/colorWhite"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/menu" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtCategory"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="top"
+                android:text="#서비스기획"
+                android:textColor="@color/colorAccent"
+                android:textSize="14dp"
+                app:fontFamily="@font/myfont" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="4dp"
+            android:background="#a0a0a0" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLines="5"
+            android:padding="12dp"
+            android:text="Contents are in Here!"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp"
+            app:fontFamily="@font/myfont" />
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

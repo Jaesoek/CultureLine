@@ -2,6 +2,7 @@ package com.culture.inha.cultureline.Api;
 
 import com.culture.inha.cultureline.DataSet.Answer;
 import com.culture.inha.cultureline.DataSet.Categories;
+import com.culture.inha.cultureline.DataSet.Comment;
 import com.culture.inha.cultureline.DataSet.Question;
 import com.culture.inha.cultureline.DataSet.QuestionSet;
 import com.culture.inha.cultureline.DataSet.LoginResult;
@@ -84,6 +85,20 @@ public interface ApiInterface {
     Call<QuestionSet> mainBoardNext(@Header("Authorization") String token,
                                     @Query("page") int pageNum);
 
+    @Headers({
+            "Accept:application/json",
+            "Content-Type:application/x-www-form-urlencoded"})
+    @GET("category/search/{category_id}")
+    Call<QuestionSet> mainBoardCategory(@Header("Authorization") String token,
+                                        @Path("category_id") String categoryId);
+
+    @Headers({
+            "Accept:application/json",
+            "Content-Type:application/x-www-form-urlencoded"})
+    @GET("auth/question")
+    Call<ArrayList<Question>> myQuestion(@Header("Authorization") String token);
+
+
     /**
      * 질문관련
      */
@@ -95,15 +110,17 @@ public interface ApiInterface {
                                 @Query("categories") String category,
                                 @Query("title") String title,
                                 @Query("contents") String contents);
+
     @Headers({
             "Accept:application/json",
             "Content-Type:application/x-www-form-urlencoded"})
     @PUT("qna/{qna}")
     Call<Question> updateQuestion(@Header("Authorization") String token,
-                                @Path("qna") int questionId,
-                                @Query("categories") String category,
-                                @Query("title") String title,
-                                @Query("contents") String contents);
+                                  @Path("qna") int questionId,
+                                  @Query("categories") String category,
+                                  @Query("title") String title,
+                                  @Query("contents") String contents);
+
     @Headers({
             "Accept:application/json",
             "Content-Type:application/x-www-form-urlencoded"})
@@ -148,12 +165,49 @@ public interface ApiInterface {
                             @Path("question") int questionId,
                             @Path("answer") int answerId);
 
+    /**
+     * 답변채택
+     */
     @Headers({
             "Accept:application/json",
             "Content-Type:application/x-www-form-urlencoded"})
-    @POST("question/{question}/answer/{answer}/dislike")
-    Call<String> dislikeAnswer(@Header("Authorization") String token,
-                               @Path("question") int questionId,
-                               @Path("answer") int answerId);
+    @POST("question/{question}/answer/{answer}/select")
+    Call<String> selectAnswer(@Header("Authorization") String token,
+                              @Path("question") int questionId,
+                              @Path("answer") int answerId);
+
+    /**
+     * 댓글관련
+     */
+    @Headers({
+            "Accept:application/json",
+            "Content-Type:application/x-www-form-urlencoded"})
+    @POST("answer/{answer}/comment")
+    Call<String> postComment(@Header("Authorization") String token,
+                             @Path("answer") int answerId,
+                             @Query("contents") String contents);
+
+    @Headers({
+            "Accept:application/json",
+            "Content-Type:application/x-www-form-urlencoded"})
+    @PUT("answer/{answer}/comment/{comment}")
+    Call<String> updateComment(@Header("Authorization") String token,
+                               @Path("answer") int answerId,
+                               @Path("comment") int commentId);
+
+    @Headers({
+            "Accept:application/json",
+            "Content-Type:application/x-www-form-urlencoded"})
+    @DELETE("answer/{answer}/comment/{comment}")
+    Call<String> deleteComment(@Header("Authorization") String token,
+                               @Path("answer") int answerId,
+                               @Path("comment") int commentId);
+    @Headers({
+            "Accept:application/json",
+            "Content-Type:application/x-www-form-urlencoded"})
+    @PUT("answer/{answer}/comment/{comment}/like")
+    Call<String> likeComment(@Header("Authorization") String token,
+                          @Path("answer") int answerId,
+                          @Path("comment") int commentId);
 
 }
